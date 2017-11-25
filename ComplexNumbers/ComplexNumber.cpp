@@ -30,6 +30,9 @@ ComplexNumber::ComplexNumber(std::string _str)
 {
 	// TODO: Breaking token into pieces and putting them back as a number
 	// For now every number will be 2+3i
+	// 
+
+
 	dReal = 2;
 	dImaginary = 3;
 }
