@@ -12,6 +12,7 @@ ComplexNumber::ComplexNumber()
 
 ComplexNumber::ComplexNumber(double _real, double _imaginary)
 {
+	std::cout << "err.log: new ComplexNumber -twoNumbers\n";
 	count++;
 	dReal = _real;
 	dImaginary = _imaginary;
