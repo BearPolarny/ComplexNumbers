@@ -4,6 +4,7 @@
 
 ComplexNumber::ComplexNumber()
 {
+	std::cout << "err.log: new ComplexNumber -default\n";
 	count++;
 	dImaginary = 0;
 	dReal = 0;
@@ -40,6 +41,7 @@ ComplexNumber::ComplexNumber(std::string _str)
 
 ComplexNumber::ComplexNumber(const ComplexNumber & COther)
 {
+	std::cout << "err.log: new ComplexNumber -clone\n";
 	count++;
 	dReal = COther.dReal;
 	dImaginary = COther.dImaginary;
