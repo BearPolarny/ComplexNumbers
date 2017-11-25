@@ -1,0 +1,15 @@
+#pragma once
+
+#define COM_ENTER ""
+#define COM_ADDNUM "enter"
+#define COM_DELETE "del"
+#define COM_DELETE_ALL "delall"
+#define COM_PRINT_ONE "print"
+#define COM_PRINT_ALL "printall"
+#define COM_HELP "?"
+#define COM_HELP2 "help"
+#define COM_ADD "add"
+#define COM_SUB "sub"
+#define COM_MUL "mul"
+#define COM_DIV "div"
+#define COM_EXIT "exit"
