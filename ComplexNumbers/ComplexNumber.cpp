@@ -29,12 +29,12 @@ ComplexNumber::ComplexNumber(double _real)
 ComplexNumber::ComplexNumber(std::string _str)
 {
 	// TODO: Breaking token into pieces and putting them back as a number
-	// For now every number will be 4+2i
+	// For now every number will be 3+4i
 	// 
 
-
-	dReal = 4;
-	dImaginary = 2;
+	std::cout << "err.log: new ComplexNumber -string\n";
+	dReal = 3;
+	dImaginary = 4;
 }
 
 ComplexNumber::ComplexNumber(const ComplexNumber & COther)
