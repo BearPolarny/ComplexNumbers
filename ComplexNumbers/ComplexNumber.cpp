@@ -4,7 +4,7 @@
 
 ComplexNumber::ComplexNumber()
 {
-	std::cout << "err.log: new ComplexNumber -default\n";
+	//std::cout << "errlog: new ComplexNumber -default\n";
 	count++;
 	dImaginary = 0;
 	dReal = 0;
@@ -13,7 +13,7 @@ ComplexNumber::ComplexNumber()
 
 ComplexNumber::ComplexNumber(double _real, double _imaginary)
 {
-	std::cout << "err.log: new ComplexNumber -twoNumbers\n";
+	//std::cout << "errlog: new ComplexNumber -twoNumbers\n";
 	count++;
 	dReal = _real;
 	dImaginary = _imaginary;
@@ -34,14 +34,14 @@ ComplexNumber::ComplexNumber(std::string _str)
 	// For now every number will be 3+4i
 	// 
 
-	std::cout << "err.log: new ComplexNumber -string\n";
+	//std::cout << "errlog: new ComplexNumber -string\n";
 	dReal = 3;
 	dImaginary = 4;
 }
 
 ComplexNumber::ComplexNumber(const ComplexNumber & COther)
 {
-	std::cout << "err.log: new ComplexNumber -clone\n";
+	//std::cout << "errlog: new ComplexNumber -clone\n";
 	count++;
 	dReal = COther.dReal;
 	dImaginary = COther.dImaginary;
