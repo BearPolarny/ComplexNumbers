@@ -68,10 +68,10 @@ int CInterface::iDelete()
 	if (listOfTokens.size() < 1) return I_ERR_NOT_ENOUGH_ARGS;
 	if (listOfTokens.front().find_first_not_of("1234567890") != std::string::npos) return I_ERR_INVALID_ARGS;
 
-	int i = std::stoi(listOfTokens.front());
+	size_t i = std::stoi(listOfTokens.front());
 
 	if (i > (vctrNumbers.size() - 1)) return I_ERR_OUT_OF_BOUNDS;
-
+	
 	vctrNumbers.erase(vctrNumbers.begin() + i);
 
 	system("cls");
@@ -95,7 +95,7 @@ int CInterface::iPrintAll()
 
 	if (listOfTokens.size() > 0) return I_ERR_TOO_MANY_ARGS;
 
-	for (int i = 0; i < vctrNumbers.size(); i++)
+	for (size_t i = 0; i < vctrNumbers.size(); i++)
 	{
 		std::cout << "[" << i << "] " << vctrNumbers.at(i) << "\t";
 	}
@@ -112,7 +112,7 @@ int CInterface::iPrintOne()
 	if (listOfTokens.size() < 1) return I_ERR_NOT_ENOUGH_ARGS;
 	if (listOfTokens.front().find_first_not_of("1234567890") != std::string::npos) return I_ERR_INVALID_ARGS;
 
-	int i = std::stoi(listOfTokens.front());
+	size_t i = std::stoi(listOfTokens.front());
 
 	if (i > (vctrNumbers.size() - 1)) return I_ERR_OUT_OF_BOUNDS;
 
@@ -125,20 +125,7 @@ int CInterface::iHelp()
 {
 	if (listOfTokens.size() > 0) return I_ERR_TOO_MANY_ARGS;
 	system("cls");
-	std::cout << "Witaj w pomocy! Jestes tu bo nikt nie dostarczyl Ci informacji jak korzystac z tego zalosnego programu\n"
-		<< "\"Program\" oferuje nastepujace mozliwosci:\n"
-		<< "\tenter - dodaj nowa liczbe (enter 12; enter 2+3i; enter -4i)\n"
-		<< "\tdel x - usun liczbe na pozycji x (del 2)\n"
-		<< "\tdelall - usun wszystkie liczby \n"
-		<< "\tprint x - wydrukuj liczbe na x pozycji (print x) \n"
-		<< "\tprintall - wydrukuj wszystkie liczby \n"
-		<< "\tadd x y - dodaj liczby na pozycjach x y oraz dodaj wynik do tablicy (add 2 0) \n"
-		<< "\tsub x y - odejmij liczby na pozycjach x y oraz dodaj wynik do tablicy (sub 2 0) \n"
-		<< "\tmul x y - pomnoz liczby na pozycjach x y oraz dodaj wynik do tablicy (mul 2 0) \n"
-		<< "\tdiv x y - podziel liczby na pozycjach x y oraz dodaj wynik do tablicy (div 2 0) \n"
-		<< "\thelp lub ? - wyswietl pomoc\n"
-		<< "\texit - zakoncz prace programu\n"
-		<< "Powodzenia!\n";
+	std::cout << HELP;
 	return I_ERR_OK;
 }
 
@@ -146,7 +133,7 @@ int CInterface::iAdd()
 {
 	system("cls");
 
-	int a, b;
+	size_t a, b;
 
 	if (listOfTokens.size() > 2) return I_ERR_TOO_MANY_ARGS;
 	if (listOfTokens.size() < 2) return I_ERR_NOT_ENOUGH_ARGS;
@@ -172,7 +159,7 @@ int CInterface::iSub()
 {
 	system("cls");
 
-	int a, b;
+	size_t a, b;
 
 	if (listOfTokens.size() > 2) return I_ERR_TOO_MANY_ARGS;
 	if (listOfTokens.size() < 2) return I_ERR_NOT_ENOUGH_ARGS;
@@ -198,7 +185,7 @@ int CInterface::iMul()
 {
 	system("cls");
 
-	int a, b;
+	size_t a, b;
 
 	if (listOfTokens.size() > 2) return I_ERR_TOO_MANY_ARGS;
 	if (listOfTokens.size() < 2) return I_ERR_NOT_ENOUGH_ARGS;
@@ -224,7 +211,7 @@ int CInterface::iDiv()
 {
 	system("cls");
 
-	int a, b;
+	size_t a, b;
 
 	if (listOfTokens.size() > 2) return I_ERR_TOO_MANY_ARGS;
 	if (listOfTokens.size() < 2) return I_ERR_NOT_ENOUGH_ARGS;

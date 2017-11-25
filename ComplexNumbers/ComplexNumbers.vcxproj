@@ -146,6 +146,7 @@
     <ClInclude Include="commands.h" />
     <ClInclude Include="ComplexNumber.h" />
     <ClInclude Include="errors.h" />
+    <ClInclude Include="help.h" />
     <ClInclude Include="Interface.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

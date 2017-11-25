@@ -1,17 +1,2 @@
-﻿  stdafx.cpp
-  Interface.cpp
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(73): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(98): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(117): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(156): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(162): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(182): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(188): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(208): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(214): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(234): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-c:\users\user\desktop\complexnumbers\complexnumbers\interface.cpp(240): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
-  Main.cpp
-  ComplexNumber.cpp
-  Generowanie kodu...
+﻿  Interface.cpp
   ComplexNumbers.vcxproj -> C:\Users\user\Desktop\ComplexNumbers\Debug\ComplexNumbers.exe

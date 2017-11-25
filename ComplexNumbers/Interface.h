@@ -6,6 +6,7 @@
 #include <Windows.h>
 #include "ComplexNumber.h"
 #include "commands.h"
+#include "help.h"
 
 class CInterface
 {

@@ -1,6 +1,7 @@
 #pragma once
 
 
+
 #define I_ERR_OK 0
 #define S_ERR_UNKNOWN_COMMAND "Niepoprawna komenda!\n"
 #define I_ERR_UNKNOWN_COMMAND 1
