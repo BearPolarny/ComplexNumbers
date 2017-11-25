@@ -10,7 +10,7 @@ public:
 	ComplexNumber();
 	ComplexNumber(double _real, double _imaginary);
 	ComplexNumber(double _real);
-	ComplexNumber(std::string _str);
+	//ComplexNumber(std::string _str);
 	ComplexNumber(const ComplexNumber &COther);
 	~ComplexNumber();
 

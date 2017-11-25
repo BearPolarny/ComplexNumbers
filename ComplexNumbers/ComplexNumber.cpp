@@ -4,7 +4,6 @@
 
 ComplexNumber::ComplexNumber()
 {
-	//std::cout << "errlog: new ComplexNumber -default\n";
 	count++;
 	dImaginary = 0;
 	dReal = 0;
@@ -13,7 +12,6 @@ ComplexNumber::ComplexNumber()
 
 ComplexNumber::ComplexNumber(double _real, double _imaginary)
 {
-	//std::cout << "errlog: new ComplexNumber -twoNumbers\n";
 	count++;
 	dReal = _real;
 	dImaginary = _imaginary;
@@ -28,20 +26,9 @@ ComplexNumber::ComplexNumber(double _real)
 	//std::cout << "\t\t\t\tT R count: " << count << std::endl;
 }
 
-ComplexNumber::ComplexNumber(std::string _str)
-{
-	// TODO: Breaking token into pieces and putting them back as a number
-	// For now every number will be 3+4i
-	// 
-
-	//std::cout << "errlog: new ComplexNumber -string\n";
-	dReal = 3;
-	dImaginary = 4;
-}
 
 ComplexNumber::ComplexNumber(const ComplexNumber & COther)
 {
-	//std::cout << "errlog: new ComplexNumber -clone\n";
 	count++;
 	dReal = COther.dReal;
 	dImaginary = COther.dImaginary;
@@ -50,7 +37,6 @@ ComplexNumber::ComplexNumber(const ComplexNumber & COther)
 
 ComplexNumber::~ComplexNumber()
 {
-	//std::cout << "delete: " << *this << std::endl;
 	count--;
 	//std::cout << "\t\t\t\tDcount: " << count << std::endl;
 }

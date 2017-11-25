@@ -53,7 +53,70 @@ int CInterface::iAddNum()
 
 	// TODO: Checking if token is legit number
 
-	vctrNumbers.push_back(ComplexNumber(sNumber));
+	double dReal, dImaginary;
+	
+	//if (!bCheckToken(sNumber)) return I_ERR_INVALID_ARGS;
+	
+	if (sNumber.find_first_not_of("1234567890.+-i") != std::string::npos) return I_ERR_INVALID_ARGS;						// Odrzucamy ca³kowicie b³êdne zapisy
+	if (sNumber.size() == 1 && sNumber[0] == 'i') {		// enter i
+		dReal = 0;
+		dImaginary = 1;
+		goto sprawdzone;			// XD
+									// To trzeba zmienic jak najszybciej zeby nikt nie zobaczyl
+	}
+	if (sNumber.size() == 2 && sNumber[1] == 'i' && ( sNumber[0] == '-' || sNumber[0] == '+')) { // enter -i 
+		dReal = 0;
+		sNumber[0] == '-' ? dImaginary = -1 : dImaginary = 1;
+		goto sprawdzone;			// Tu to samo, kek
+	}
+	if (sNumber.find_last_of("1234567890") == std::string::npos) return I_ERR_INVALID_ARGS;								// Odrzucamy zapisy samych znakow: ++i.
+	if (sNumber.find('i') != std::string::npos && sNumber.find('i') != sNumber.size() - 1) return I_ERR_INVALID_ARGS;	// Odrzucamy zapisy z 'i' w œrodku:  3i+3
+	if (sNumber.find_last_of("+-") == sNumber.size()-1) return I_ERR_INVALID_ARGS;										// Odrzucamy zapisy z +- na koncu: 3+; 3+1i-
+	
+	if (sNumber.size() > 1)
+	{
+		for (size_t i = 1; i < sNumber.size(); i++)
+		{
+			if (sNumber[i] == '+' || sNumber[i] == '-')
+			{
+				if (sNumber[i - 1] == '+' || sNumber[i - 1] == '-') return I_ERR_INVALID_ARGS;
+			}
+		}
+	}
+		
+	if (tokenize(sNumber, '+', '-').size() > 2) return I_ERR_INVALID_ARGS;
+
+	for (size_t i = 1; i < sNumber.size(); i++)
+	{
+		if (sNumber[i] == 'i' && (sNumber[i - 1] == '+' || sNumber[i - 1] == '-')) {
+			sNumber[i - 1] == '+' ? dImaginary = 1 : dImaginary = -1;
+			dReal = std::stod(sNumber.substr(0, i));
+
+			goto sprawdzone;          // To to ju¿ jest kompletna patologia...
+		}
+	}
+
+	if (sNumber.find('i') == std::string::npos) {
+		dReal = std::stod(sNumber);
+		dImaginary = 0;
+		goto sprawdzone;
+	}
+	if ((sNumber.find_last_of("+-") == 0 || sNumber.find_last_of("+-") == std::string::npos) && sNumber[sNumber.size() - 1] == 'i')
+	{
+		dReal = 0;
+		sNumber.pop_back();
+		dImaginary = std::stod(sNumber);
+		goto sprawdzone;
+	}																		
+
+
+
+	dReal = std::stod(sNumber.substr(0, sNumber.find_last_of("+-")));
+	dImaginary = std::stod(sNumber.substr(sNumber.find_last_of("+-"), sNumber.size() - sNumber.find_last_of("+-")));
+
+sprawdzone:
+
+	vctrNumbers.push_back(ComplexNumber(dReal, dImaginary));
 
 	std::cout << "Dodano: " << vctrNumbers.back();
 	Sleep(1500);
@@ -237,19 +300,7 @@ int CInterface::iDiv()
 
 bool CInterface::bCheckToken(std::string token)
 {
-	std::list<std::string> tmp = tokenize(token, '+', '-');
-
-	int i = token.find_last_of("-+");
-
-	if (tmp.size() > 2) return false;
-	if (tmp.size() > 1) {
-		if (token[i - 1] == '+' || token[i - 1] == '-') return false;
-		if (i == token.size() - 1) return false;
-	}
-
-	i = token.find('i');
-	if (i != std::string::npos && i != token.size() - 1) return false;
-
+	
 	return true;
 }
 
