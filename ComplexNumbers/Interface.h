@@ -32,7 +32,7 @@ private:
 	int iMul();
 	int iDiv();
 
-	bool bCheckToken(std::string token);
+	int iCheckToken(double &dReal, double &dImaginary);
 
 	std::vector<ComplexNumber> vctrNumbers;
 	std::list<std::string> listOfTokens;
